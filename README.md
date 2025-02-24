@@ -40,4 +40,35 @@
 ### **Core Functions**
 **The core implementation**
 
-### Meanwhile, you can use delay_us(xus) function to delay in a blocking mode.
+### Meanwhile, you can use delay_us(xus) function to delay in a blocking mode.  
+```
+/**
+\brief      微秒级延时函数	delay_us
+	\arg				xus:延时的时间us
+\attention	稳定状态（不被中断打断）误差小于1%
+\return			None
+*/
+#ifndef delay_us
+	#define delay_us(xus)\
+	do{\
+		int start, target, last, val, cur_delay, rest = xus;\
+		while(rest > 0){\
+			cur_delay = rest>800? 800: rest;\
+			start = SysTick->VAL;\
+			target = cur_delay*_FREQ_MHz_;\
+			if (start >= target) {\
+				last = start - target;\
+				do{\
+					val = SysTick->VAL;\
+				}while((val > last) && (val <= start));\
+			} else {\
+				last = _SYSTICK_RELOAD_REG_ + start - target;\
+				do{\
+					val = SysTick->VAL;\
+				}while((val > last) || (val <= start));\
+			}\
+			rest -= cur_delay;\
+		}\
+	}while(0)
+#endif	
+```
