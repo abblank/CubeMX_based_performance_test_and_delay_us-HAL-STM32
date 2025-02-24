@@ -22,6 +22,7 @@
  * SOFTWARE.
  ****************************************************************************************
  * This Lib is appropriate for projects from CubeMX
+ * Attention: To use this Lib, you should chose GNU extension first in Keil
  * Contact author: 2078801653@qq.com
  ****************************************************************************************
  */
@@ -37,8 +38,8 @@
 #include "main.h"
 
 /*useful variables*/
-#define DURATION 	pass_time_us														//´úÂë¶ÎµÄÖ´ĞĞÊ±¼ä²âÊÔ½á¹û
-#define RUN_TIME 	_CONNECT2(_static_, __LINE__)						//²âÊÔ´ÎÊı
+#define DURATION 	pass_time_us														//ä»£ç æ®µçš„æ‰§è¡Œæ—¶é—´æµ‹è¯•ç»“æœ
+#define RUN_TIME 	_CONNECT2(_static_, __LINE__)						//æµ‹è¯•æ¬¡æ•°
 
 /**************************************************************************************/
 /*User Controled Macros*/
@@ -55,12 +56,12 @@
 
 #define GT_ERROR_HANDLER ;
 
-//ÊÇ·ñÆôÓÃget_time() ##µ÷ÊÔÊ±¿ÉÒÔ¿ªÆô£¬·Çµ÷ÊÔÊ±ÉèÎª0¼´¿É£¬ÎŞĞèÉ¾³ıget_time()´úÂë
+//æ˜¯å¦å¯ç”¨get_time() ##è°ƒè¯•æ—¶å¯ä»¥å¼€å¯ï¼Œéè°ƒè¯•æ—¶è®¾ä¸º0å³å¯ï¼Œæ— éœ€åˆ é™¤get_time()ä»£ç 
 #ifndef _ENABLE_GET_TIME_
 	#define _ENABLE_GET_TIME_ 1
 #endif
 
-//HAL¿âµÄSystemCoreClockÔÚÔ¤´¦ÀíÊ±²»È·¶¨£¬¹ÊĞèÊÖ¶¯Ö¸¶¨Öµ¡£_FREQ_MHz_¼´STM32Ê±ÖÓÆµÂÊ£¨µ¥Î»ÎªMHz£©
+//HALåº“çš„SystemCoreClockåœ¨é¢„å¤„ç†æ—¶ä¸ç¡®å®šï¼Œæ•…éœ€æ‰‹åŠ¨æŒ‡å®šå€¼ã€‚_FREQ_MHz_å³STM32æ—¶é’Ÿé¢‘ç‡ï¼ˆå•ä½ä¸ºMHzï¼‰
 #ifndef _FREQ_MHz_
 	#define _FREQ_MHz_  80
 #endif
@@ -154,9 +155,9 @@ _process(\
 #endif
 	
 /**
-\brief      Î¢Ãë¼¶ÑÓÊ±º¯Êı	delay_us
-	\arg				xus:ÑÓÊ±µÄÊ±¼äus
-\attention	ÎÈ¶¨×´Ì¬£¨²»±»ÖĞ¶Ï´ò¶Ï£©Îó²îĞ¡ÓÚ1%
+\brief      å¾®ç§’çº§å»¶æ—¶å‡½æ•°	delay_us
+	\arg				xus:å»¶æ—¶çš„æ—¶é—´us
+\attention	ç¨³å®šçŠ¶æ€ï¼ˆä¸è¢«ä¸­æ–­æ‰“æ–­ï¼‰è¯¯å·®å°äº1%
 \return			None
 */
 #ifndef delay_us
