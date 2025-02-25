@@ -1,4 +1,4 @@
-# CubeMX_based_performance_test_and_us_delay
+# CubeMX_based_performance_test_and_delay_us-HAL-STM32
 
 *This Lib is appropriate for projects from CubeMX. Your project should be create at the beginning by CubeMX and it can make sure that the SysTick is configured in a correct way.*
 
