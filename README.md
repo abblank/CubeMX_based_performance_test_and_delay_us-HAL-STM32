@@ -76,12 +76,7 @@
 
 **example:**  
 ```
-//performance evaluation
-get_time(...){	//The number of parameters you fill in depends on your definitions
-	//code	
-}
-```
-By default, this function is based on the 蓝桥杯嵌入式比赛(lanqiaobei embedded competition), all parameters are optional, as described below:
+By default, this function is based on the 蓝桥杯嵌入式比赛(lanqiaobei embedded competition), all parameters are optional, as described below (however, users can customize get_time() functions with different parameters according to the methods mentioned above):
 /**
   * @brief Project performance evaluation.
   * @param times, optional; It indicates how many times it is run to produce a result output, 1 by default
@@ -90,5 +85,11 @@ By default, this function is based on the 蓝桥杯嵌入式比赛(lanqiaobei em
   *   @arg @ref Linex where x is between 0 and 9 //defined in lcd.h
   * @retval Calibration value.
   */
+//performance evaluation
+get_time(...){	//The number of parameters you fill in depends on your definitions
+	//code that needed performance measurement
+}
+```
+
 
 
