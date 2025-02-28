@@ -72,3 +72,23 @@
 	}while(0)
 #endif	
 ```
+
+
+**example:**  
+```
+//performance evaluation
+get_time(...){	//The number of parameters you fill in depends on your definitions
+	//code	
+}
+```
+By default, this function is based on the 蓝桥杯嵌入式比赛(lanqiaobei embedded competition), all parameters are optional, as described below:
+/**
+  * @brief Project performance evaluation.
+  * @param times, optional; It indicates how many times it is run to produce a result output, 1 by default
+  * @param str,   optional; Provide character hints for output to distinguish different results in different positions, "GT" by default
+  * @param Line,  optional; If this parameter is default, the serial port output will be used (the user needs to implement serial port redirection)
+  *   @arg @ref Linex where x is between 0 and 9 //defined in lcd.h
+  * @retval Calibration value.
+  */
+
+
